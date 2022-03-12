@@ -1,4 +1,4 @@
-class tt
+class boardClass
 {
 private:
 
@@ -13,7 +13,7 @@ private:
     
     
 public:   
-    tt()
+    boardClass()
     {   check_win_lose_value=0;
         mark_1 = 'X';
         mark_2 = 'O';
