@@ -3,18 +3,18 @@
 #include<conio.h>
 #include<string.h>
 #include<stdlib.h>
-#include"tt.h"
+#include"boardClass.h"
 
 using namespace std;
 
 int main()
 {
-    tt k;
-    k.play_game();
+    boardClass play;
+    play.play_game();
     return 0;  
 }
 
-void tt::table_show()
+void boardClass::table_show()
 {
     system("CLS");
     for (int i = 0; i < 3; i++)
@@ -39,7 +39,7 @@ void tt::table_show()
     }
 }
 
-void tt::player_input()
+void boardClass::player_input()
 {
     system("CLS");
     table_show();
@@ -52,7 +52,7 @@ void tt::player_input()
     check_player_input();
 }
 
-void tt::menu()
+void boardClass::menu()
 {   
     system("CLS");
     cout<<"Welcome to Kata Kuti Game\n";
@@ -70,11 +70,11 @@ void tt::menu()
                 break;
 
         default: system("CLS");
-                 tt::menu();
+                 boardClass::menu();
     }
 }
 
-void tt::start_game()
+void boardClass::start_game()
 {   
     player_choose :
     system("CLS");
@@ -100,7 +100,7 @@ void tt::start_game()
     cin.get();
 }
 
-void tt::check_player_input()
+void boardClass::check_player_input()
 {
     if (r <= 3 && c <= 3 && board[r-1][c-1] == gap)
     {
@@ -112,7 +112,7 @@ void tt::check_player_input()
     }  
 }
 
-void tt::check_win_lose()
+void boardClass::check_win_lose()
 {
     if( (board[0][0] == board[0][1] && board[0][0] == board[0][2] && board[0][0] == mark_1) || (board[0][0] == board[0][1] && board[0][0] == board[0][2] && board[0][0] == mark_2)
         || (board[1][0] == board[1][1] && board[1][0] == board[1][2] && board[1][0] == mark_1) || (board[1][0] == board[1][1] && board[1][0] == board[1][2] && board[1][0] == mark_2)
@@ -131,7 +131,7 @@ void tt::check_win_lose()
     }
 }
 
-void tt::play_game()
+void boardClass::play_game()
 {   
     main_menu :
     menu();
@@ -198,7 +198,7 @@ void tt::play_game()
 
 }
 
-void tt::player_number_change()
+void boardClass::player_number_change()
 {
     player_no=player_no+sign;
 }
